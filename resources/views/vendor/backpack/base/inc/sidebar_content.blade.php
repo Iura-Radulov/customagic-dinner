@@ -18,3 +18,6 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-type') }}"><i class="nav-icon la la-sliders"></i> {{ trans('labels.menu_types') }}</a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user-card') }}"><i class="nav-icon la la-file-text-o"></i>{{ trans('labels.user-cards') }}</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('user-list') }}"><i class="nav-icon la la-list-ul"></i>
+    {{trans('labels.user-list')}}</a></li>

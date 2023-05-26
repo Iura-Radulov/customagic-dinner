@@ -44,7 +44,7 @@ class UserCardCrudController extends CrudController
             [
                 'name'        => 'active',
                 'label'       => trans('labels.active'),
-                'type'        => 'radio',
+                'type'        => 'boolean',
                 'options'     => [
                     0 => 'Disabled',
                     1 => 'Active'
@@ -59,6 +59,24 @@ class UserCardCrudController extends CrudController
                         }
                     },
                 ]
+            ],
+            [  // Select
+                'label'     => trans('labels.user'),
+                'type'      => 'select',
+                'name'      => 'user_id', // the db column for the foreign key
+                'entity'    => 'user',
+                // optional - manually specify the related model and attribute
+                'model'     => "App\Models\User", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+            ],
+            [  // Select
+                'label'     => trans('labels.menu_types'),
+                'type'      => 'select',
+                'name'      => 'menu_id', // the db column for the foreign key
+                'entity'    => 'menu',
+                // optional - manually specify the related model and attribute
+                'model'     => "App\Models\MenuType", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
             ],
             [
                 'name'  => 'number',
@@ -91,20 +109,17 @@ class UserCardCrudController extends CrudController
 
         $this->crud->addFields([
             [
-                'name'  => 'number',
-                'label' => trans('labels.number'),
-                'type'  => 'text',
+                'name'          => 'active',
+                'label'         => trans('labels.active'),
+                'type'        => 'switch',
+                'color'    => 'primary',
+
             ],
 
             [  // Select
                 'label'     => trans('labels.user'),
                 'type'      => 'select',
                 'name'      => 'user_id', // the db column for the foreign key
-
-                // optional
-                // 'entity' should point to the method that defines the relationship in your Model
-                // defining entity will make Backpack guess 'model' and 'attribute'
-//                'entity'    => 'category',
 
                 // optional - manually specify the related model and attribute
                 'model'     => "App\Models\User", // related model
@@ -114,6 +129,20 @@ class UserCardCrudController extends CrudController
                 'options'   => (function ($query) {
                     return $query->orderBy('name', 'ASC')->where('active', 1)->get();
                 }), //  you can use this to filter the results show in the select
+            ],
+            [  // Select
+                'label'     => trans('labels.menu_types'),
+                'type'      => 'select',
+                'name'      => 'menu_id', // the db column for the foreign key
+                'entity'    => 'menu',
+                'model'     => "App\Models\MenuType", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+
+            ],
+            [
+                'name'  => 'number',
+                'label' => trans('labels.number'),
+                'type'  => 'text',
             ],
             ]);
 

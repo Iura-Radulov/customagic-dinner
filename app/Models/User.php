@@ -24,6 +24,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'active',
+        'guid',
         'division_id',
     ];
 
@@ -50,4 +52,5 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Division', 'division_id', 'id');
     }
+
 }
