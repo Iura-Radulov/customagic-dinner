@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\MenuTupeRequest;
+use App\Http\Requests\MenuTypeRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Support\Str;
 
 /**
- * Class MenuTupeCrudController
+ * Class MenuTypeCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class MenuTupeCrudController extends CrudController
+class MenuTypeCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -27,8 +27,8 @@ class MenuTupeCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\MenuTupe::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/menu-tupe');
+        CRUD::setModel(\App\Models\MenuType::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/menu-type');
         CRUD::setEntityNameStrings( trans('labels.menu_type'), trans('labels.menu_types'));
     }
 

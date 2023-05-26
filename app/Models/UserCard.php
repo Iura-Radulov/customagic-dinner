@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MenuTupe extends Model
+class UserCard extends Model
 {
     use CrudTrait;
     use HasFactory;
@@ -17,11 +17,16 @@ class MenuTupe extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'menu_type';
+    protected $table = 'user_card';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'active',
+        'admin',
+        'number',
+        'user_id',
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 

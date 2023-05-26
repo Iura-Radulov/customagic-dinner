@@ -15,4 +15,6 @@
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('division') }}"><i class="nav-icon la la-briefcase"></i> {{ trans('messages.divisions') }}</a></li>
 @endif
 
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-tupe') }}"><i class="nav-icon la la-question"></i> {{ trans('labels.menu_types') }}</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-type') }}"><i class="nav-icon la la-sliders"></i> {{ trans('labels.menu_types') }}</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('user-card') }}"><i class="nav-icon la la-file-text-o"></i>{{ trans('labels.user-cards') }}</a></li>
