@@ -12,7 +12,7 @@
     </ul>
 </li>
 @if(backpack_user()->hasRole(trans('backpack::permissionmanager.admin')) )
-    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('division') }}"><i class="nav-icon la la-briefcase"></i> {{ trans('messages.divisions') }}</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('division') }}"><i class="nav-icon la la-briefcase"></i> {{ trans('labels.divisions') }}</a></li>
 @endif
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-type') }}"><i class="nav-icon la la-sliders"></i> {{ trans('labels.menu_types') }}</a></li>
@@ -21,3 +21,5 @@
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user-list') }}"><i class="nav-icon la la-list-ul"></i>
     {{trans('labels.user-list')}}</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('order') }}"><i class="nav-icon la la-floppy-o"></i>{{ trans('labels.orders') }}</a></li>
