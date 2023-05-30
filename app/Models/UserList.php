@@ -23,7 +23,7 @@ class UserList extends Model
     protected $guarded = ['id'];
     protected $fillable = [
         'users',
-        'month',
+        'date_from',
         'date_to',
 
     ];
@@ -36,6 +36,10 @@ class UserList extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'list_user', 'list_id', 'user_id')->orderBy('users.name','ASC');
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

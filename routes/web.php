@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::redirect('/', '/admin');
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
+Route::get('/', [HomeController::class, 'show']);
+Route::post('/check', [HomeController::class, 'check'])->name('check');
